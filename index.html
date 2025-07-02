@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constellatio - Web Marketing & Automatisation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #0f1419 0%, #1a2332 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            padding: 60px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #0f1419 0%, #1a2332 100%);
+        }
+
+        .logo {
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 30px;
+        }
+
+        .tagline {
+            font-size: 1.4rem;
+            color: #64ffda;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #a0aec0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #1a2332;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: #f8fafc;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border-color: #64ffda;
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #64ffda 0%, #4fd1c7 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 2rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #1a2332;
+        }
+
+        .service-card p {
+            color: #64748b;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            list-style: none;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .service-features li {
+            padding: 8px 0;
+            color: #475569;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .service-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #64ffda;
+            font-weight: bold;
+        }
+
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a2332 0%, #0f1419 100%);
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: #fff;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+        }
+
+        .cta p {
+            color: #a0aec0;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #64ffda 0%, #4fd1c7 100%);
+            color: #1a2332;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(100, 255, 218, 0.4);
+        }
+
+        footer {
+            background: #0f1419;
+            color: #a0aec0;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .services h2 {
+                font-size: 2rem;
+            }
+            
+            .service-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDYwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMWEyMzMyIi8+Cjx0ZXh0IHg9IjMwMCIgeT0iMTEwIiBmb250LWZhbWlseT0iU2Vnb2UgVUksIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNDgiIGZpbGw9IiM2NGZmZGEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNvbnN0ZWxsYXRpbzwvdGV4dD4KPHN0YXIgY3g9IjUyMCIgY3k9IjY1IiByPSIxLjUiIGZpbGw9IiM2NGZmZGEiLz4KPHN0YXIgY3g9IjU0MCIgY3k9IjUwIiByPSIyIiBmaWxsPSIjNjRmZmRhIi8+CjxzdGFyIGN4PSI1NjAiIGN5PSI3MCIgcj0iMS41IiBmaWxsPSIjNjRmZmRhIi8+Cjx0ZXh0IHg9IjMwMCIgeT0iMTUwIiBmb250LWZhbWlseT0iU2Vnb2UgVUksIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiNhMGFlYzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGxldHRlci1zcGFjaW5nPSIzcHgiPldFQiBNQVJLRVRJTkc8L3RleHQ+Cjwvc3ZnPg==" alt="Constellatio" class="logo">
+            <p class="tagline">Expertise digitale pour votre croissance</p>
+            <p class="subtitle">Référencement, automatisation et stratégies marketing adaptées à vos besoins</p>
+        </div>
+    </header>
+
+    <section class="services">
+        <div class="container">
+            <h2>Nos Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>Référencement SEO, GEO & IA</h3>
+                    <p>Optimisez votre visibilité sur Google, Google My Business et les nouveaux moteurs d'IA comme ChatGPT, Perplexity et Claude.</p>
+                    <ul class="service-features">
+                        <li>Audit technique et sémantique</li>
+                        <li>Optimisation Google My Business</li>
+                        <li>Optimisation pour l'IA générative</li>
+                        <li>Stratégie de contenu personnalisée</li>
+                        <li>Suivi des performances</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Publicité Google Ads</h3>
+                    <p>Maximisez votre ROI avec des campagnes Google Ads optimisées et ciblées selon vos objectifs.</p>
+                    <ul class="service-features">
+                        <li>Google Ads & Shopping</li>
+                        <li>Campagnes Search et Display</li>
+                        <li>Optimisation des conversions</li>
+                        <li>Reporting détaillé</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Automatisation Airtable & Make</h3>
+                    <p>Automatisez vos processus métier pour gagner en efficacité et réduire les tâches répétitives.</p>
+                    <ul class="service-features">
+                        <li>Bases de données Airtable</li>
+                        <li>Workflows automatisés (Make)</li>
+                        <li>Intégrations API personnalisées</li>
+                        <li>Formation et accompagnement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Prêt à développer votre activité ?</h2>
+            <p>Discutons de vos projets et trouvons ensemble les meilleures solutions</p>
+            <a href="mailto:gabriel.curtet@constellatio.com" class="btn">Nous contacter</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Constellatio - Expertise Web Marketing & Automatisation</p>
+        </div>
+    </footer>
+</body>
+</html>
